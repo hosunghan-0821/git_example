@@ -1,0 +1,45 @@
+/* 자손 결합자 */
+.outer li {
+	color: olivedrab;
+}
+
+/* 자식(1촌 자손) 결합자 */
+.outer > li{
+  color: aqua;
+}
+
+.outer > li li{
+  text-decoration: underline;
+}
+
+/* 뒤따르는 모든 동생들 결합자 */
+.starter ~ li{
+  font-style: oblique;
+}
+/* 뒤따르는 바로 다음 동생 결합자 */
+.starter + li{
+  font-weight:  bold;
+}
+
+/*  가상 클래스 */
+ol li:first-child,
+ol li:last-child{
+  color: yellowgreen;
+}
+
+.outer > li:not(:last-child){
+  text-decoration: line-through;
+}
+ul:not(.outer){
+  font-weight: bold;
+}
+
+/* ~번째 요소 가상 클래스 */
+ul li:nth-child(3){
+  font-weight: bold;
+  color: deeppink;
+}
+
+li:hover,ul li:nth-child(3):hover {
+  color: blue;
+}
